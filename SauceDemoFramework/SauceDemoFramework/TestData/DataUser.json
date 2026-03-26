@@ -1,0 +1,14 @@
+[
+  {
+    "TestCase": "Login con usuario estándar",
+    "Username": "standard_user",
+    "Password": "secret_sauce",
+    "IsValid": true
+  },
+  {
+    "TestCase": "Login con contraseña incorrecta",
+    "Username": "wrong_user",
+    "Password": "wrong_password",
+    "IsValid": false
+  }
+]
