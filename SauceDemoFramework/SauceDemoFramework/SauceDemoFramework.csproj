@@ -11,11 +11,15 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="TestData\DataProducts.json" />
     <None Remove="TestData\DataUser.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\DataProducts.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\DataUser.json">

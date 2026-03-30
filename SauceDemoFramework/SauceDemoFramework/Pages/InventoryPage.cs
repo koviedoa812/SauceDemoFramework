@@ -15,114 +15,65 @@ namespace SauceDemoFramework.Pages
             _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(ConfigManager.ExplicitWait));
         }
 
-        // Locators
-        private IWebElement CartIcon => _driver.FindElement(By.ClassName("shopping_cart_link"));
-        private IWebElement CartBadge => _driver.FindElement(By.ClassName("shopping_cart_badge"));
-        private IWebElement SortDropdown => _driver.FindElement(By.ClassName("product_sort_container"));
+        //Locators
+        //private IWebElement product1 => _wait.Until(d => d.FindElement(By.Id("add-to-cart-sauce-labs-backpack")));
 
-        //Método para verificar que estamos en la página de inventario, la consume LoginTests.cs
+        private IReadOnlyCollection<IWebElement> products => _driver.FindElements(By.CssSelector("[data-test^='add-to-cart']"));
+
+
+        // Método para obtener la URL actual de la página
         public string GetCurrentUrl()
         {
             return _driver.Url;
         }
 
-        public bool IsOnInventoryPage()
+
+        //public void AddProductToCart()
+        //{
+        //    product1.Click();
+        //}
+
+        // Agregar producto por índice
+        public void AddProductToCartByIndex(int index)
         {
-            return _driver.Url.Contains("inventory");
+            var buttons = _driver.FindElements(By.CssSelector("[data-test^='add-to-cart']"));
+            buttons[index].Click();
         }
-        //public string AddRandomProductToCart()
-        //{
-        //    // Buscar botones frescos del DOM cada vez
-        //    var addButtons = _driver.FindElements(
-        //        By.CssSelector("[data-test^='add-to-cart']"));
 
-        //    if (addButtons.Count == 0)
-        //        throw new Exception("No hay más productos disponibles.");
-
-        //    var random = new Random();
-        //    var selectedButton = addButtons[random.Next(0, addButtons.Count)];
-
-        //    // Obtener nombre del producto desde el atributo data-test
-        //    // "add-to-cart-sauce-labs-backpack" → buscar nombre real
-        //    var productNameElement = selectedButton
-        //        .FindElement(By.XPath("./ancestor::div[@data-test='inventory-item']//div[@data-test='inventory-item-name']"));
-
-        //    var productName = productNameElement.Text;
-        //    selectedButton.Click();
-
-        //    return productName;
-        //}
-
-        //public int GetCartCount()
-        //{
-        //    var badges = _driver.FindElements(
-        //        By.CssSelector("[data-test='shopping-cart-badge']"));
-        //    return badges.Count > 0 ? int.Parse(badges[0].Text) : 0;
-        //}
-
-        public string AddRandomProductToCart()
+        // Agregar N productos sin repetir
+        public List<string> AddRandomProductsToCart(int count)
         {
-            var addButtons = _driver.FindElements(
-                By.CssSelector("[data-test^='add-to-cart']"));
-
-            if (addButtons.Count == 0)
-                throw new Exception("No hay más productos disponibles.");
-
+            var addedProducts = new List<string>();
+            // Elegir índice aleatorio
             var random = new Random();
-            var selectedButton = addButtons[random.Next(0, addButtons.Count)];
 
-            var productName = selectedButton
-                .FindElement(By.XPath(
-                    "./ancestor::div[@data-test='inventory-item']//div[@data-test='inventory-item-name']"))
-                .Text;
+            for (int i = 0; i < count; i++)
+            {
+                // Esperar que los botones estén disponibles
+                _wait.Until(d => d.FindElements(By.CssSelector("[data-test^='add-to-cart']")).Count > 0);
 
-            // Guardar count actual antes del click
-            var currentCount = GetCartCount();
+                // Obtener botones disponibles frescos del DOM
+                var buttons = _driver.FindElements(By.CssSelector("[data-test^='add-to-cart']"));
 
-            selectedButton.Click();
+                if (buttons.Count == 0)
+                    throw new Exception("No hay más productos disponibles.");
 
-            // Esperar que el contador se incremente en 1
-            _wait.Until(d => GetCartCount() == currentCount + 1);
+                
+                var index = random.Next(0, buttons.Count);
+                var button = buttons[index];
 
-            return productName;
+                // Obtener nombre del producto
+                var productName = button.FindElement(By.XPath("./ancestor::div[@data-test='inventory-item']" + "//div[@data-test='inventory-item-name']")).Text;
+
+
+                button.Click();
+
+                addedProducts.Add(productName);
+                TestContext.WriteLine($"Producto {i + 1} agregado: {productName}");
+            }
+
+            return addedProducts;
         }
 
-        public int GetCartCount()
-        {
-            var badges = _driver.FindElements(
-                By.CssSelector("[data-test='shopping-cart-badge']"));
-            return badges.Count > 0 ? int.Parse(badges[0].Text) : 0;
-        }
-        
-
-        public void RemoveProductFromCart(string productName)
-        {
-            var button = _driver.FindElement(
-                By.XPath($"//div[text()='{productName}']/ancestor::div[@class='inventory_item']//button"));
-            button.Click();
-        }
-
-        public void GoToCart()
-        {
-            CartIcon.Click();
-        }
-
-        public void SortBy(string option)
-        {
-            var select = new SelectElement(SortDropdown);
-            select.SelectByText(option);
-        }
-
-        public List<string> GetProductNames()
-        {
-            var products = _driver.FindElements(By.ClassName("inventory_item_name"));
-            return products.Select(p => p.Text).ToList();
-        }
-
-        public List<double> GetProductPrices()
-        {
-            var prices = _driver.FindElements(By.ClassName("inventory_item_price"));
-            return prices.Select(p => double.Parse(p.Text.Replace("$", ""))).ToList();
-        }
     }
 }

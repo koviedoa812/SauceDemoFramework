@@ -55,5 +55,17 @@ namespace SauceDemoFramework.Utilities
             var filePath = Path.Combine(folder, fileName);
             screenshot.SaveAsFile(filePath);
         }
+
+        //Método para limpiar el carrito antes de cada test (si es necesario)
+        protected void CleanCart()
+        {
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/cart.html");
+            var removeButtons = driver.FindElements(
+                By.CssSelector("[data-test^='remove-']"));
+            foreach (var button in removeButtons)
+                button.Click();
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/inventory.html");
+        }
+
     }
 }

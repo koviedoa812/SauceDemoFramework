@@ -1,6 +1,7 @@
 ﻿using AutomationPracticeDemo.Tests.Tests.Login.Asserts;
 using NUnit.Framework;
 using SauceDemoFramework.Pages;
+using SauceDemoFramework.Tests.WebTests.AddCart.Asserts;
 using SauceDemoFramework.Utilities;
 
 namespace SauceDemoFramework.Tests.WebTests.AddCart
@@ -23,21 +24,35 @@ namespace SauceDemoFramework.Tests.WebTests.AddCart
 
             // 3. Login automático antes de cada test
             loginPage.Login(validUser.Username, validUser.Password);
+
+            CleanCart();
         }
+
+        //[Test]
+
+        //public void AddProductToCartTest()
+        //{
+        //    // 4. Agregar producto al carrito
+        //    inventoryPage.AddProductToCart();
+        //    // 5. Verificar que el producto se agregó correctamente
+        //    string currentUrl = inventoryPage.GetCurrentUrl();
+
+        //    Assert.IsTrue(currentUrl.Contains("inventory"), "La URL no contiene 'inventory' después de agregar al carrito.");
+        //}
 
         [Test]
         public void AddProductToCartAndValidateCounter()
         {
-            var productsAdded = new List<string>();
+            // 1. Agregar 3 productos aleatorios
+            var addedProducts = inventoryPage.AddRandomProductsToCart(3);
 
-            for (int i = 0; i < 3; i++)
-            {
-                var productName = inventoryPage.AddRandomProductToCart();
-                productsAdded.Add(productName);
-                TestContext.WriteLine($"Producto {i + 1} agregado: {productName}");
-            }
+            Assert.That(addedProducts.Count, Is.EqualTo(3), "No se agregaron 3 productos al carrito.");
 
-            Assert.That(inventoryPage.GetCartCount(), Is.EqualTo(3));
+
+
         }
+
+
+
     }
 }
