@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SauceDemoFramework.Utilities;
+using SeleniumExtras.WaitHelpers;
+using static NUnit.Framework.Constraints.Tolerance;
 
 namespace SauceDemoFramework.Pages
 {
@@ -16,10 +18,29 @@ namespace SauceDemoFramework.Pages
         }
 
         //Locators
-        //private IWebElement product1 => _wait.Until(d => d.FindElement(By.Id("add-to-cart-sauce-labs-backpack")));
 
-        private IReadOnlyCollection<IWebElement> products => _driver.FindElements(By.CssSelector("[data-test^='add-to-cart']"));
+        private IWebElement ProductOne => _wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("add-to-cart-sauce-labs-backpack")));
+        private IWebElement ProductTwo => _wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("add-to-cart-sauce-labs-bike-light")));
+        private IWebElement ProductThree => _wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("add-to-cart-sauce-labs-bolt-t-shirt")));
 
+        // Elemento para el contador del carrito (Badge)
+        private IWebElement CartBadge => _wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("shopping_cart_badge")));
+
+        // Elemento para eliminar productos del carrito
+        private IWebElement RemoveBackpackButton => _wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("remove-sauce-labs-backpack")));
+
+        // Locator para el link del carrito
+        // En InventoryPage.cs
+        private IWebElement CartLink => _wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("shopping_cart_link")));
+
+        public void IrAlCarrito()
+        {
+            // Aseguramos el clic
+            CartLink.Click();
+
+            // Log para confirmar en la consola de Visual Studio
+            Console.WriteLine("Acción: Se da clic en el icono del carrito ejecutado.");
+        }
 
         // Método para obtener la URL actual de la página
         public string GetCurrentUrl()
@@ -27,53 +48,31 @@ namespace SauceDemoFramework.Pages
             return _driver.Url;
         }
 
-
-        //public void AddProductToCart()
-        //{
-        //    product1.Click();
-        //}
-
-        // Agregar producto por índice
-        public void AddProductToCartByIndex(int index)
+        // Método para agregar productos al carrito
+        public void AddProductsToCart()
         {
-            var buttons = _driver.FindElements(By.CssSelector("[data-test^='add-to-cart']"));
-            buttons[index].Click();
+            ProductOne.Click();
+            ProductTwo.Click();
+            ProductThree.Click();
         }
 
-        // Agregar N productos sin repetir
-        public List<string> AddRandomProductsToCart(int count)
+        // Método para obtener el texto del contador del carrito (Badge)
+        public string GetCartCount()
         {
-            var addedProducts = new List<string>();
-            // Elegir índice aleatorio
-            var random = new Random();
-
-            for (int i = 0; i < count; i++)
+            try
             {
-                // Esperar que los botones estén disponibles
-                _wait.Until(d => d.FindElements(By.CssSelector("[data-test^='add-to-cart']")).Count > 0);
-
-                // Obtener botones disponibles frescos del DOM
-                var buttons = _driver.FindElements(By.CssSelector("[data-test^='add-to-cart']"));
-
-                if (buttons.Count == 0)
-                    throw new Exception("No hay más productos disponibles.");
-
-                
-                var index = random.Next(0, buttons.Count);
-                var button = buttons[index];
-
-                // Obtener nombre del producto
-                var productName = button.FindElement(By.XPath("./ancestor::div[@data-test='inventory-item']" + "//div[@data-test='inventory-item-name']")).Text;
-
-
-                button.Click();
-
-                addedProducts.Add(productName);
-                TestContext.WriteLine($"Producto {i + 1} agregado: {productName}");
+                return CartBadge.Text;
             }
-
-            return addedProducts;
+            catch (NoSuchElementException)
+            {
+                return "0";
+            }
         }
 
+        // Método para eliminar un producto del carrito
+        public void RemoveProductFromCart()
+        {
+            RemoveBackpackButton.Click();
+        }
     }
 }

@@ -14,8 +14,6 @@ namespace SauceDemoFramework.Utilities
             {
                 var options = new ChromeOptions();
                 options.AddArgument("--start-maximized");
-                /*options.AddArgument("--no-sandbox");
-                options.AddArgument("--disable-dev-shm-usage");*/
                 options.AddArgument("--disable-notifications");
                 options.AddArgument("--disable-infobars");
                 options.AddArgument("--headless=new");

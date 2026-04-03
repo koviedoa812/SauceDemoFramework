@@ -35,8 +35,7 @@ namespace SauceDemoFramework.Tests.WebTests.Login
             var loginPage = new LoginPage(driver);
 
             //Llenado del formulario de login
-            loginPage.Login(Username, Password);
-            
+            loginPage.Login(Username, Password);            
 
             Assert.That(loginPage.GetErrorMessage(), Does.Contain("Epic sadface: Username and password do not match any user in this service"), "El mensaje de error no se mostró correctamente para un usuario inválido.");
         }

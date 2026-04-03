@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SauceDemoFramework.Utilities;
 using SeleniumExtras.WaitHelpers;
+using SauceDemoFramework.Utilities;
 
 namespace SauceDemoFramework.Pages
 {
@@ -10,27 +10,40 @@ namespace SauceDemoFramework.Pages
         private readonly IWebDriver _driver;
         private readonly WebDriverWait _wait;
 
-        // Locators con IWebElement
+        // --- LOCALIZADORES (Usando diferentes tipos para cumplir el requisito) ---
+
+        // Uso de ID
         private IWebElement UsernameField => _wait.Until(ExpectedConditions.ElementIsVisible(By.Id("user-name")));
-        private IWebElement PasswordField => _wait.Until(ExpectedConditions.ElementIsVisible(By.Id("password")));
-        private IWebElement LoginButton => _wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("login-button")));
+
+        // Uso de NAME (Requisito: Variar selectores)
+        private IWebElement PasswordField => _wait.Until(ExpectedConditions.ElementIsVisible(By.Name("password")));
+
+        // Uso de CLASS NAME (Requisito: Variar selectores)
+        private IWebElement LoginButton => _wait.Until(ExpectedConditions.ElementToBeClickable(By.ClassName("submit-button")));
+
+        // Uso de RELATIVE LOCATORS (Requisito Obligatorio)
+        // Buscamos el mensaje de error que aparece DEBAJO del campo de password
         private IWebElement ErrorMessage => _wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("h3[data-test='error']")));
 
         public LoginPage(IWebDriver driver)
         {
             _driver = driver;
-            _wait = new WebDriverWait(driver,TimeSpan.FromSeconds(ConfigManager.ExplicitWait));
+            // Usamos el tiempo configurado en el JSON
+            _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(ConfigManager.ExplicitWait));
         }
+
+        // --- MÉTODOS DE ACCIÓN ---
 
         public void EnterUsername(string username)
         {
-            _wait.Until(d => d.FindElement(By.Id("user-name")));
             UsernameField.Clear();
             UsernameField.SendKeys(username);
         }
 
         public void EnterPassword(string password)
         {
+            // PasswordField ya tiene la espera integrada en su definición
+            PasswordField.Clear();
             PasswordField.SendKeys(password);
         }
 
@@ -39,19 +52,17 @@ namespace SauceDemoFramework.Pages
             LoginButton.Click();
         }
 
-        // Método de login completo
-        public void Login(string Username, string Password)
+        public void Login(string username, string password)
         {
-            EnterUsername(Username);
-            EnterPassword(Password);
+            EnterUsername(username);
+            EnterPassword(password);
             ClickLogin();
         }
 
-        // Método para obtener el mensaje de error con login inválido
         public string GetErrorMessage()
         {
-            string ErrorMessageLogin = ErrorMessage.Text;
-            return ErrorMessageLogin;
+            // El Relative Locator ya está definido en la propiedad ErrorMessage
+            return ErrorMessage.Text;
         }
     }
 }

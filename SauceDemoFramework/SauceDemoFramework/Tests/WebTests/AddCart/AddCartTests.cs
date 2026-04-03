@@ -1,7 +1,7 @@
 ﻿using AutomationPracticeDemo.Tests.Tests.Login.Asserts;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using SauceDemoFramework.Pages;
-using SauceDemoFramework.Tests.WebTests.AddCart.Asserts;
 using SauceDemoFramework.Utilities;
 
 namespace SauceDemoFramework.Tests.WebTests.AddCart
@@ -24,35 +24,37 @@ namespace SauceDemoFramework.Tests.WebTests.AddCart
 
             // 3. Login automático antes de cada test
             loginPage.Login(validUser.Username, validUser.Password);
-
-            CleanCart();
         }
-
-        //[Test]
-
-        //public void AddProductToCartTest()
-        //{
-        //    // 4. Agregar producto al carrito
-        //    inventoryPage.AddProductToCart();
-        //    // 5. Verificar que el producto se agregó correctamente
-        //    string currentUrl = inventoryPage.GetCurrentUrl();
-
-        //    Assert.IsTrue(currentUrl.Contains("inventory"), "La URL no contiene 'inventory' después de agregar al carrito.");
-        //}
 
         [Test]
-        public void AddProductToCartAndValidateCounter()
+        public void AddProductTest()
         {
-            // 1. Agregar 3 productos aleatorios
-            var addedProducts = inventoryPage.AddRandomProductsToCart(3);
+            inventoryPage.AddProductsToCart();
 
-            Assert.That(addedProducts.Count, Is.EqualTo(3), "No se agregaron 3 productos al carrito.");
+            string actualBadgeCount = inventoryPage.GetCartCount();
 
-
-
+            // Validación (Prueba 3 del proyecto: Validar contador)
+            Assert.That(actualBadgeCount, Is.EqualTo("3"), "El contador del carrito (badge) no muestra la cantidad esperada de productos.");
         }
 
 
+        [Test]
+        public void EliminarProductoYValidarContador()
+        {
+            // 1. Preparación: Agregamos 3 productos primero
+            inventoryPage.AddProductsToCart(); // Agrega 3 productos, pero solo verificaremos el contador después de eliminar uno
+
+            // Verificación intermedia (opcional pero recomendada): El contador debe ser "3"
+            Assert.That(inventoryPage.GetCartCount(), Is.EqualTo("3"), "El carrito debería haber iniciado con 3 productos.");
+
+            // 2. Acción: Eliminamos uno de los productos (la mochila)
+            inventoryPage.RemoveProductFromCart();
+
+            // 3. Validación final: El contador debe haber bajado a "2"
+            string actualCount = inventoryPage.GetCartCount();
+
+            Assert.That(actualCount, Is.EqualTo("2"), "El contador no disminuyó después de eliminar el producto.");
+        }
 
     }
 }
