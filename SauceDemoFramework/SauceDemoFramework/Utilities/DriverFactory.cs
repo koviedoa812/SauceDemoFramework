@@ -6,7 +6,7 @@ namespace SauceDemoFramework.Utilities
     // Crear, entrega y cierra la instancia del driver
     public static class DriverFactory
     {
-        private static IWebDriver? _driver;
+        //private static IWebDriver? _driver;
         public static IWebDriver GetDriver()
         {
             // Siempre crear una nueva instancia por test para evitar estado compartido entre pruebas
@@ -28,13 +28,9 @@ namespace SauceDemoFramework.Utilities
         }
 
         // Llamar a este método al finalizar las pruebas para cerrar el navegador y liberar recursos
-        public static void QuitDriver(IWebDriver driver)
+        public static void QuitDriver(IWebDriver? driver)
         {
-            if (driver != null)
-            {
-                driver.Quit();    // Cierra todas las ventanas y mata el proceso chromedriver.exe
-                driver.Dispose(); // Libera la memoria
-            }
+            driver?.Quit();
         }
     }
 }

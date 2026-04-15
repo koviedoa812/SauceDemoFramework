@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -15,6 +15,7 @@
     <None Remove="TestData\DataUser.json" />
     <None Remove="TestData\sortTestData.json" />
   </ItemGroup>
+
 
   <ItemGroup>
     <Content Include="appsettings.json">
@@ -53,9 +54,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
     <Folder Include="Properties\" />
-    <Folder Include="Tests\BDDTests\" />
+    <Folder Include="Tests\BDDTests\Features\" />
   </ItemGroup>
 
 </Project>
