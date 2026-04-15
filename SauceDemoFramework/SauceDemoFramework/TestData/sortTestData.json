@@ -1,0 +1,14 @@
+[
+  {
+    "TestCase": "Ordenar por nombre A-Z",
+    "SortOption": "az",
+    "SortValue": "Name (A to Z)",
+    "IsAscending": true
+  },
+  {
+    "TestCase": "Ordenar por nombre Z-A",
+    "SortOption": "za",
+    "SortValue": "Name (Z to A)",
+    "IsAscending": false
+  }
+]

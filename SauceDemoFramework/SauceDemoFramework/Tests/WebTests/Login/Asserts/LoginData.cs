@@ -18,12 +18,12 @@ namespace AutomationPracticeDemo.Tests.Tests.Login.Asserts
 
         public LoginData(string username, string password, bool isValid, string firstName, string lastName, string postalCode)
         {
-            this.username = username;
-            this.password = password;
-            this.isValid = isValid;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.postalCode = postalCode;
+            this.Username = username;
+            this.Password = password;
+            this.IsValid = isValid;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.PostalCode = postalCode;
         }
         public string Username
         {

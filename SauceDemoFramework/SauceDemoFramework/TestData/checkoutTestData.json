@@ -1,0 +1,42 @@
+[
+  {
+    "TestCase": "Checkout exitoso con datos válidos",
+    "Username": "standard_user",
+    "Password": "secret_sauce",
+    "FirstName": "Kenneth",
+    "LastName": "Oviedo",
+    "PostalCode": "12345",
+    "IsValid": true,
+    "ExpectedError": ""
+  },
+  {
+    "TestCase": "Checkout sin FirstName",
+    "Username": "standard_user",
+    "Password": "secret_sauce",
+    "FirstName": "",
+    "LastName": "Oviedo",
+    "PostalCode": "12345",
+    "IsValid": false,
+    "ExpectedError": "Error: First Name is required"
+  },
+  {
+    "TestCase": "Checkout sin LastName",
+    "Username": "standard_user",
+    "Password": "secret_sauce",
+    "FirstName": "Kenneth",
+    "LastName": "",
+    "PostalCode": "12345",
+    "IsValid": false,
+    "ExpectedError": "Error: Last Name is required"
+  },
+  {
+    "TestCase": "Checkout sin PostalCode",
+    "Username": "standard_user",
+    "Password": "secret_sauce",
+    "FirstName": "Kenneth",
+    "LastName": "Oviedo",
+    "PostalCode": "",
+    "IsValid": false,
+    "ExpectedError": "Error: Postal Code is required"
+  }
+]

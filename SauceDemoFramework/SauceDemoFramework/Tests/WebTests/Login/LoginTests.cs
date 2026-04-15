@@ -21,11 +21,11 @@ namespace SauceDemoFramework.Tests.WebTests.Login
             //Llenado del formulario de login
             loginPage.Login(Username, Password);
 
-            string expectedUrl = inventoryPage.GetCurrentUrl();
+            string actualTitle = inventoryPage.GetPageTitle();
 
-            Assert.That(expectedUrl, Does.Contain("inventory.html"), "El login falló: No se redirigió a la página de inventario.");
-
+            Assert.That(actualTitle, Is.EqualTo("Products"), "El título de la página no coincide con el esperado después de un login exitoso.");
         }
+
 
         // PRUEBA DE LOGIN CON USUARIOS INVÁLIDOS
 
@@ -42,10 +42,4 @@ namespace SauceDemoFramework.Tests.WebTests.Login
 
 
     }
-
-
-
-
-
-
 }

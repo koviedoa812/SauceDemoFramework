@@ -10,6 +10,13 @@ namespace SauceDemoFramework.Pages
         private readonly IWebDriver _driver;
         private readonly WebDriverWait _wait;
 
+        public LoginPage(IWebDriver driver)
+        {
+            _driver = driver;
+            // Usamos el tiempo configurado en el JSON
+            _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(ConfigManager.ExplicitWait));
+        }
+
         // --- LOCALIZADORES (Usando diferentes tipos para cumplir el requisito) ---
 
         // Uso de ID
@@ -25,12 +32,6 @@ namespace SauceDemoFramework.Pages
         // Buscamos el mensaje de error que aparece DEBAJO del campo de password
         private IWebElement ErrorMessage => _wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("h3[data-test='error']")));
 
-        public LoginPage(IWebDriver driver)
-        {
-            _driver = driver;
-            // Usamos el tiempo configurado en el JSON
-            _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(ConfigManager.ExplicitWait));
-        }
 
         // --- MÉTODOS DE ACCIÓN ---
 

@@ -3,8 +3,8 @@
     "TestCase": "Login con usuario estándar",
     "Username": "standard_user",
     "Password": "secret_sauce",
-    "FirstName": "John",
-    "LastName": "Doe",
+    "FirstName": "Kenneth",
+    "LastName": "Oviedo",
     "PostalCode": "12345",
     "IsValid": true
   },

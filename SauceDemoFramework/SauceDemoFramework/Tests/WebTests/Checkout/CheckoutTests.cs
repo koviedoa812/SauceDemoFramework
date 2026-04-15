@@ -2,75 +2,80 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using SauceDemoFramework.Pages;
+using SauceDemoFramework.Tests.WebTests.Checkout.Asserts;
 using SauceDemoFramework.Utilities;
 using System.Linq;
+using System.Text.Json;
 
 namespace SauceDemoFramework.Tests.WebTests.Checkout
 {
     [TestFixture]
     public class CheckoutTests : BaseTest
     {
-        private LoginPage _loginPage = null!;
-        private InventoryPage _inventoryPage = null!;
-        private CheckoutPage _checkoutPage = null!;
-        private CartPage _cartPage = null!;
+        private InventoryPage _inventoryPage;
+        private CheckoutPage _checkoutPage;
+        private LoginPage _loginPage;
+        private CartPage _cartPage;
+
+        // Carga los casos de prueba desde el JSON
+        private static IEnumerable<CheckoutTestData> GetCheckoutTestCases()
+        {
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestData", "checkoutTestData.json");
+            string json = File.ReadAllText(path);
+            return JsonSerializer.Deserialize<List<CheckoutTestData>>(json)!;
+        }
 
         [SetUp]
         public void SetupCheckout()
         {
-            // Inicializamos las páginas necesarias
             _loginPage = new LoginPage(driver);
             _inventoryPage = new InventoryPage(driver);
             _checkoutPage = new CheckoutPage(driver);
             _cartPage = new CartPage(driver);
         }
 
-        [Test]
-        public void CompletarCheckoutExitoso_Test()
+        [Test, Category("Checkout")]
+        [TestCaseSource(nameof(GetCheckoutTestCases))]
+        public void FullCheckout_ShouldBeSuccessful(CheckoutTestData data)
         {
-            // 1. ARRANGUE: Datos desde JSON
-            var usuarioValido = LoginData.LoadList("DataUser.json").First(u => u.IsValid);
+            if (!data.IsValid) Assert.Ignore("Caso inválido, ignorado en este test.");
 
-            // 2. ACCIÓN: Flujo de navegación
-            _loginPage.Login(usuarioValido.Username, usuarioValido.Password);
-            _inventoryPage.AddProductsToCart();
+            TestContext.WriteLine($"Ejecutando caso: {data.TestCase}");
 
-            // Paso C: Ir al carrito
-            _inventoryPage.IrAlCarrito();
-
-            // VALIDACIÓN: ¿Realmente llegamos al carrito?
-            Assert.That(_cartPage.IsAtCartPage(), Is.True, "ERROR: No se pudo cargar la página del carrito.");
-
-            // 1. Haces el clic reforzado
+            _loginPage.Login(data.Username, data.Password);
+            _inventoryPage.AddBackpackToCart();
+            _inventoryPage.GoToCart();
             _cartPage.ClickCheckout();
+            _checkoutPage.FillInformation(data.FirstName, data.LastName, data.PostalCode, expectNavigation: true);
+            _checkoutPage.FinishCheckout();
 
-            // 2. Esperas a que la URL cambie (Esto es clave antes del Assert)
-            _wait.Until(d => d.Url.Contains("checkout-step-one.html"));
-
-            // 3. El Assert ahora sí encontrará la URL correcta
-            Assert.That(_checkoutPage.IsAtCheckoutStepOne(), Is.True, "ERROR: La navegación falló.");
-
-
-            // Paso E: Completar formulario (Este método llena datos y hace CLICK)
-            _checkoutPage.FillCustomerInfo(usuarioValido.FirstName, usuarioValido.LastName, usuarioValido.PostalCode);
-
-            // VALIDACIÓN: El método IsAt... se encarga de esperar y confirmar.
-            Assert.That(_checkoutPage.IsAtCheckoutStepTwo(), Is.True, "ERROR: No se pudo navegar a la pantalla de revisión final (Overview).");
-
-
-            // Paso F: Finalizar la compra
-            _checkoutPage.ClickFinish();
-
-            // Sincronización: Esperar a que la URL cambie a la página de éxito
-            _wait.Until(d => d.Url.Contains("checkout-complete.html"));
-
-            // 3. VALIDACIÓN FINAL (ASSERT)
-            string mensajeReal = _checkoutPage.GetSuccessMessage();
-            string mensajeEsperado = "Thank you for your order!";
-
-            Assert.That(mensajeReal, Is.EqualTo(mensajeEsperado), $"ERROR: El mensaje final no es el esperado. Se obtuvo: {mensajeReal}");
-
-            Console.WriteLine("¡TEST COMPLETADO CON ÉXITO!");
+            string successMessage = _checkoutPage.GetSuccessMessage();
+            Assert.That(successMessage, Is.EqualTo("Thank you for your order!"),
+                $"Error en caso '{data.TestCase}': El mensaje de éxito no es el esperado.");
         }
+
+        [Test, Category("Checkout")]
+        [TestCaseSource(nameof(GetCheckoutTestCases))]
+        public void Checkout_WithIncompleteData_ShouldShowError(CheckoutTestData data)
+        {
+            if (data.IsValid) Assert.Ignore("Caso válido, ignorado en este test.");
+
+            TestContext.WriteLine($"Ejecutando caso: {data.TestCase}");
+
+            _loginPage.Login(data.Username, data.Password);
+            _inventoryPage.AddBackpackToCart();
+            _inventoryPage.GoToCart();
+            _cartPage.ClickCheckout();
+            _checkoutPage.FillInformation(data.FirstName, data.LastName, data.PostalCode, expectNavigation: false);
+
+            string errorMessage = _checkoutPage.GetErrorMessage();
+            Assert.That(errorMessage, Is.EqualTo(data.ExpectedError),
+                $"Error en caso '{data.TestCase}': El mensaje de error no es el esperado.");
+        }
+
+
+
+
+
     }
 }

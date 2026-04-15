@@ -16,16 +16,60 @@ namespace SauceDemoFramework.Utilities
         {
             driver = DriverFactory.GetDriver();
             _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(ConfigManager.ExplicitWait));
+
+            // Navegar primero a la URL base para que las operaciones sobre cookies/localStorage se apliquen al dominio correcto
             driver.Navigate().GoToUrl(ConfigManager.BaseUrl);
+
+            // Asegurar sesión limpia entre tests: eliminar cookies y almacenamiento local/session
+            try
+            {
+                driver.Manage().Cookies.DeleteAllCookies();
+                if (driver is IJavaScriptExecutor js)
+                {
+                    js.ExecuteScript("window.localStorage.clear(); window.sessionStorage.clear();");
+                }
+
+                // Refrescar para que la app cargue en estado limpio
+                driver.Navigate().Refresh();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"DEBUG: No se pudo limpiar la sesión antes del test: {ex.Message}");
+            }
         }
 
         [TearDown]
         public void TearDown()
         {
-            
-            TakeScreenshot();
-            DriverFactory.QuitDriver();
-            driver.Dispose();
+            var status = TestContext.CurrentContext.Result.Outcome.Status;
+
+            if (status != NUnit.Framework.Interfaces.TestStatus.Skipped)
+            {
+                TakeScreenshot();
+            }
+
+            // Cerrar y liberar la instancia de driver de este test únicamente
+            try
+            {
+                driver.Quit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"DEBUG: Error al cerrar el driver: {ex.Message}");
+            }
+
+            try
+            {
+                driver.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"DEBUG: Error al disponer el driver: {ex.Message}");
+            }
+            finally
+            {
+                driver = null!;
+            }
         }
 
         private void TakeScreenshot()
@@ -52,6 +96,5 @@ namespace SauceDemoFramework.Utilities
             var filePath = Path.Combine(folder, fileName);
             screenshot.SaveAsFile(filePath);
         }
-
     }
 }

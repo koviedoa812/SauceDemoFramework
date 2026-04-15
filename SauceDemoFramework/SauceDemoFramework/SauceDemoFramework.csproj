@@ -11,14 +11,22 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="TestData\checkoutTestData.json" />
     <None Remove="TestData\DataUser.json" />
+    <None Remove="TestData\sortTestData.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestData\checkoutTestData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\DataUser.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\sortTestData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -46,7 +54,7 @@
 
   <ItemGroup>
     <Folder Include="Features\" />
-    <Folder Include="Tests\ApiTests\" />
+    <Folder Include="Properties\" />
     <Folder Include="Tests\BDDTests\" />
   </ItemGroup>
 

@@ -8,10 +8,7 @@ namespace SauceDemoFramework.Utilities
 
         static ConfigManager()
         {
-            _config = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
+            _config = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).Build();
         }
 
         public static string BaseUrl => _config["Settings:BaseUrl"]!;
@@ -22,5 +19,9 @@ namespace SauceDemoFramework.Utilities
         public static string ValidPassword => _config["Credentials:ValidPassword"]!;
         public static string InvalidUsername => _config["Credentials:InvalidUsername"]!;
         public static string InvalidPassword => _config["Credentials:InvalidPassword"]!;
+
+        public static string FirstName => _config["0:FirstName"]?.Trim() ?? "";
+        public static string LastName => _config["0:LastName"]?.Trim() ?? "";
+        public static string PostalCode => _config["0:PostalCode"]?.Trim() ?? "";
     }
 }
