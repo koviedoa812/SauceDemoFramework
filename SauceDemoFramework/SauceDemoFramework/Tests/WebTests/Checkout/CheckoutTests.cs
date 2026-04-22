@@ -32,6 +32,8 @@ namespace SauceDemoFramework.Tests.WebTests.Checkout
             _inventoryPage = new InventoryPage(driver);
             _checkoutPage = new CheckoutPage(driver);
             _cartPage = new CartPage(driver);
+
+            //CleanCart();
         }
 
         [Test, Category("Checkout")]
@@ -69,8 +71,7 @@ namespace SauceDemoFramework.Tests.WebTests.Checkout
             _checkoutPage.FillInformation(data.FirstName, data.LastName, data.PostalCode, expectNavigation: false);
 
             string errorMessage = _checkoutPage.GetErrorMessage();
-            Assert.That(errorMessage, Is.EqualTo(data.ExpectedError),
-                $"Error en caso '{data.TestCase}': El mensaje de error no es el esperado.");
+            Assert.That(errorMessage, Is.EqualTo(data.ExpectedError), $"Error en caso '{data.TestCase}': El mensaje de error no es el esperado.");
         }
 
 

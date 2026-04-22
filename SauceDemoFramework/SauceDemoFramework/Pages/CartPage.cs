@@ -33,6 +33,8 @@ namespace SauceDemoFramework.Pages
         // Método para hacer clic en el botón "Checkout"
         public void ClickCheckout()
         {
+            var checkoutButton = _wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("checkout"))); //Ok
+
             CheckoutButton.Click();
         }
 

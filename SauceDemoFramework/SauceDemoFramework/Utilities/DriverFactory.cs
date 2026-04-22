@@ -14,12 +14,13 @@ namespace SauceDemoFramework.Utilities
             options.AddArgument("--start-maximized");
             options.AddArgument("--disable-notifications");
             options.AddArgument("--disable-infobars");
-            options.AddArgument("--headless=new");
+            //options.AddArgument("--headless=new");
             options.AddArgument("--window-size=1920,1080");
 
             // --- AGREGA ESTO PARA QUITAR LA ALERTA DE LA IMAGEN ---
             options.AddUserProfilePreference("credentials_enable_service", false);
             options.AddUserProfilePreference("profile.password_manager_enabled", false);
+            options.AddUserProfilePreference("profile.password_manager_leak_detection", false);
             // -----------------------------------------------------
 
             var driver = new ChromeDriver(options);

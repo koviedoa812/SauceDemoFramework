@@ -1,0 +1,1628 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <title>SauceDemo Test Report</title>
+ <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/commons/img/logo.png">
+ <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/commons/img/logo.png">
+ <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@78fa5a2421587b8228150e93142e5ba97178e85b/spark/css/spark-style.css" rel="stylesheet" />
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@78fa5a2421587b8228150e93142e5ba97178e85b/spark/js/jsontree.js"></script>
+ <style></style>
+</head>
+<body class="spa  standard">
+ <div class="app">
+  <div class="layout">
+   <div class="header navbar">
+ <div class="vheader">
+  <div class="nav-logo">
+   <a href="#">
+	 <div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/commons/img/logo.png')"></div>
+   </a>
+  </div>
+  <ul class="nav-left">
+   <li class="search-box">
+	<a class="search-toggle" href="#"><i class="search-icon fa fa-search"></i><i class="search-icon-close fa fa-close"></i></a>
+   </li>
+   <li class="search-input">
+    <input id="search-tests" class="form-control" type="text" placeholder="Search...">
+   </li>
+  </ul>
+  <ul class="nav-right">
+   <li class="m-r-10"><a href="#"><span class="badge badge-primary">SauceDemoFramework — Test Results</span></a></li>
+   <li class="m-r-10">
+    <a href="#"><span class="badge badge-primary">22/4/2026 15:31:26</span></a>
+   </li>
+  </ul>
+ </div>
+</div>
+   <div class="side-nav">
+ <div class="side-nav-inner">
+  <ul class="side-nav-menu">
+   <li class="nav-item dropdown" onclick="toggleView('test-view')">
+    <a id="nav-test" class="dropdown-toggle" href="#">
+     <span class="ico"><i class="fa fa-list"></i></span>
+    </a>
+   </li>
+   <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+    <a id="nav-dashboard" class="dropdown-toggle" href="#">
+     <span class="ico"><i class="fa fa-bar-chart"></i></span>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+
+   <div class="vcontainer">
+    <div class="main-content">
+     
+
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+      <ul class="tools pull-left">
+        <li><a href="#"><span class="font-size-14">Tests</span></a></li>
+      </ul>
+      <ul class="tools text-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+          <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+ <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>  <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>  <a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>             <div class="dropdown-divider"></div>
+            <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item" status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Agregar productos al carrito en SauceDemo</p>
+            <p class="text-sm">
+              <span>15:31:26</span> / <span>14463,07 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">Agregar productos al carrito en SauceDemo</h5>
+                  <span class='badge badge-success'>22/4/2026 15:31:26</span>
+                  <span class='badge badge-danger'>22/4/2026 15:31:41</span>
+                  <span class='badge badge-default'>14463,07 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-10 m-l-5">    Como usuario autenticado
+    Quiero poder agregar y eliminar productos del carrito
+    Para gestionar mi compra antes del checkout</div>               </div>
+            </div>
+
+
+  <div class="mt-4">
+  <div class="accordion">
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li title="Time taken"><span class='badge badge-default'>10817,09</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="2">Agregar un producto y validar el contador del carrito</div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:37</td>
+        <td>
+Given que el usuario inicia sesión con usuario "standard_user" y contraseña "secret_sauce"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:37</td>
+        <td>
+When agrega 3 productos al carrito        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:37</td>
+        <td>
+Then el contador del carrito debe mostrar "1"        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li title="Time taken"><span class='badge badge-default'>3324,65</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="3">Eliminar un producto y validar que el contador desaparece</div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:40</td>
+        <td>
+Given que el usuario inicia sesión con usuario "standard_user" y contraseña "secret_sauce"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:41</td>
+        <td>
+When agrega 3 productos al carrito        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:41</td>
+        <td>
+When elimina un producto del carrito        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:41</td>
+        <td>
+Then el contador del carrito debe mostrar "0"        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div> 
+          </div>
+        </li>
+        <li class="test-item" status="fail" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Flujo completo de compra en SauceDemo</p>
+            <p class="text-sm">
+              <span>15:31:41</span> / <span>76223,19 ms</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-fail">Flujo completo de compra en SauceDemo</h5>
+                  <span class='badge badge-success'>22/4/2026 15:31:41</span>
+                  <span class='badge badge-danger'>22/4/2026 15:32:57</span>
+                  <span class='badge badge-default'>76223,19 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-10 m-l-5">    Como usuario autenticado
+    Quiero poder completar el proceso de compra
+    Para recibir mis productos correctamente</div>               </div>
+            </div>
+
+
+  <div class="mt-4">
+  <div class="accordion">
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li title="Time taken"><span class='badge badge-default'>23908,13</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="5">Completar compra con distintos datos de cliente</div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:44</td>
+        <td>
+Given que el usuario inicia sesión con usuario "standard_user" y contraseña "secret_sauce"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:44</td>
+        <td>
+When agrega 3 productos al carrito        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:31:44</td>
+        <td>
+When navega al carrito de compras        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:05</td>
+        <td>
+When procede al checkout        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:05</td>
+        <td>
+Timed out after 20 seconds        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:05</td>
+        <td>
+<pre>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at SauceDemoFramework.StepDefinitions.Checkout.CheckoutStepDefinitions.WhenProcedeAlCheckout() in C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\StepDefinitions\CheckoutStepDefinitions\CheckoutStepDefinitions.cs:line 45
+   at InvokeStub_Action`1.Invoke(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Reqnroll.Bindings.BindingInvoker.InvokeBindingAsync(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepMatchAsync(BindingMatch match, Object[] arguments, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepMatchAsync(BindingMatch match, Object[] arguments, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.<>c__DisplayClass57_0.<<ExecuteStepAsync>b__7>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Reqnroll.Infrastructure.TestExecutionEngine.<>c__DisplayClass57_0.<<ExecuteStepAsync>g__HandleStepExecutionExceptions|0>d.MoveNext()</pre>        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li title="Time taken"><span class='badge badge-default'>4010,04</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="6">Completar compra con distintos datos de cliente</div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:08</td>
+        <td>
+Given que el usuario inicia sesión con usuario "standard_user" y contraseña "secret_sauce"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:08</td>
+        <td>
+When agrega 3 productos al carrito        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:08</td>
+        <td>
+When navega al carrito de compras        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:09</td>
+        <td>
+When procede al checkout        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:09</td>
+        <td>
+When completa el formulario con nombre "María" apellido "González" y código postal "98765"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:09</td>
+        <td>
+When confirma la compra        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:09</td>
+        <td>
+Then debe ver el mensaje de éxito "Thank you for your order!"        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li title="Time taken"><span class='badge badge-default'>23965,33</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="7">Completar compra con distintos datos de cliente</div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:12</td>
+        <td>
+Given que el usuario inicia sesión con usuario "standard_user" y contraseña "secret_sauce"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:12</td>
+        <td>
+When agrega 3 productos al carrito        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:12</td>
+        <td>
+When navega al carrito de compras        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:33</td>
+        <td>
+When procede al checkout        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:33</td>
+        <td>
+Timed out after 20 seconds        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:33</td>
+        <td>
+<pre>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at SauceDemoFramework.StepDefinitions.Checkout.CheckoutStepDefinitions.WhenProcedeAlCheckout() in C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\StepDefinitions\CheckoutStepDefinitions\CheckoutStepDefinitions.cs:line 45
+   at InvokeStub_Action`1.Invoke(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Reqnroll.Bindings.BindingInvoker.InvokeBindingAsync(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepMatchAsync(BindingMatch match, Object[] arguments, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepMatchAsync(BindingMatch match, Object[] arguments, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.<>c__DisplayClass57_0.<<ExecuteStepAsync>b__7>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Reqnroll.Infrastructure.TestExecutionEngine.<>c__DisplayClass57_0.<<ExecuteStepAsync>g__HandleStepExecutionExceptions|0>d.MoveNext()</pre>        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li title="Time taken"><span class='badge badge-default'>23768,37</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="8">Completar una compra exitosamente</div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:36</td>
+        <td>
+Given que el usuario inicia sesión con usuario "standard_user" y contraseña "secret_sauce"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:36</td>
+        <td>
+When agrega 3 productos al carrito        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:32:37</td>
+        <td>
+When navega al carrito de compras        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:57</td>
+        <td>
+When procede al checkout        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:57</td>
+        <td>
+Timed out after 20 seconds        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>abr 22, 2026 15:32:57</td>
+        <td>
+<pre>   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at SauceDemoFramework.StepDefinitions.Checkout.CheckoutStepDefinitions.WhenProcedeAlCheckout() in C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\StepDefinitions\CheckoutStepDefinitions\CheckoutStepDefinitions.cs:line 45
+   at InvokeStub_Action`1.Invoke(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Reqnroll.Bindings.BindingInvoker.InvokeBindingAsync(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepMatchAsync(BindingMatch match, Object[] arguments, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepMatchAsync(BindingMatch match, Object[] arguments, DurationHolder durationHolder)
+   at Reqnroll.Infrastructure.TestExecutionEngine.<>c__DisplayClass57_0.<<ExecuteStepAsync>b__7>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Reqnroll.Infrastructure.TestExecutionEngine.<>c__DisplayClass57_0.<<ExecuteStepAsync>g__HandleStepExecutionExceptions|0>d.MoveNext()</pre>        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div> 
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Login en SauceDemo</p>
+            <p class="text-sm">
+              <span>15:32:57</span> / <span>10973,75 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">Login en SauceDemo</h5>
+                  <span class='badge badge-success'>22/4/2026 15:32:57</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:08</span>
+                  <span class='badge badge-default'>10973,75 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+ <div class="m-t-10 m-l-5">    Como usuario del sistema
+    Quiero poder iniciar sesión
+    Para acceder a las funcionalidades de la tienda</div>               </div>
+            </div>
+
+
+  <div class="mt-4">
+  <div class="accordion">
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li title="Time taken"><span class='badge badge-default'>2911,12</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="10">Login exitoso con usuario válido</div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:00</td>
+        <td>
+Given que el usuario está en la página de login        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:00</td>
+        <td>
+When ingresa el usuario "standard_user" y la contraseña "secret_sauce"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:00</td>
+        <td>
+When hace clic en el botón de login        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:00</td>
+        <td>
+Then debe ser redirigido a la página de inventario        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li title="Time taken"><span class='badge badge-default'>2573,02</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="11">Login fallido con campos vacíos</div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:03</td>
+        <td>
+Given que el usuario está en la página de login        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:03</td>
+        <td>
+When ingresa el usuario "" y la contraseña ""        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:03</td>
+        <td>
+When hace clic en el botón de login        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:03</td>
+        <td>
+Then debe ver el mensaje de error "Epic sadface: Username is required"        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li title="Time taken"><span class='badge badge-default'>2711,61</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="12">Login fallido con credenciales inválidas</div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:05</td>
+        <td>
+Given que el usuario está en la página de login        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:06</td>
+        <td>
+When ingresa el usuario "usuario_invalido" y la contraseña "password_incorrecto"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:06</td>
+        <td>
+When hace clic en el botón de login        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:06</td>
+        <td>
+Then debe ver el mensaje de error "Epic sadface: Username and password do not match any user in this service"        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+            <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li title="Time taken"><span class='badge badge-default'>2267,83</span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <div class="node" id="13">Login fallido con usuario bloqueado</div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:08</td>
+        <td>
+Given que el usuario está en la página de login        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:08</td>
+        <td>
+When ingresa el usuario "locked_out_user" y la contraseña "secret_sauce"        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:08</td>
+        <td>
+When hace clic en el botón de login        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:08</td>
+        <td>
+Then debe ver el mensaje de error "Epic sadface: Sorry, this user has been locked out."        </td>
+      </tr>
+  </tbody>
+</table>            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div> 
+          </div>
+        </li>
+        <li class="test-item" status="skip" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</p>
+            <p class="text-sm">
+              <span>15:33:10</span> / <span>159,82 ms</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-skip">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:10</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:11</span>
+                  <span class='badge badge-default'>159,82 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153311.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153311.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>abr 22, 2026 15:33:11</td>
+        <td>
+Test skipped.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</p>
+            <p class="text-sm">
+              <span>15:33:19</span> / <span>1114,15 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:19</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:20</span>
+                  <span class='badge badge-default'>1114,15 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153320.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153320.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:20</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</p>
+            <p class="text-sm">
+              <span>15:33:22</span> / <span>1129,81 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:22</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:23</span>
+                  <span class='badge badge-default'>1129,81 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153323.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153323.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:23</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</p>
+            <p class="text-sm">
+              <span>15:33:25</span> / <span>1085,8 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:25</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:26</span>
+                  <span class='badge badge-default'>1085,8 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153326.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153326.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:26</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</p>
+            <p class="text-sm">
+              <span>15:33:28</span> / <span>1164,66 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:28</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:29</span>
+                  <span class='badge badge-default'>1164,66 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153329.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153329.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:29</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="skip" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</p>
+            <p class="text-sm">
+              <span>15:33:31</span> / <span>111,42 ms</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-skip">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:31</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:32</span>
+                  <span class='badge badge-default'>111,42 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153332.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153332.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>abr 22, 2026 15:33:32</td>
+        <td>
+Test skipped.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="skip" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</p>
+            <p class="text-sm">
+              <span>15:33:33</span> / <span>542,28 ms</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-skip">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:33</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:34</span>
+                  <span class='badge badge-default'>542,28 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153334.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153334.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>abr 22, 2026 15:33:34</td>
+        <td>
+Test skipped.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="skip" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</p>
+            <p class="text-sm">
+              <span>15:33:35</span> / <span>489,05 ms</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-skip">SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:35</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:36</span>
+                  <span class='badge badge-default'>489,05 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153336.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)_20260422_153336.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>abr 22, 2026 15:33:36</td>
+        <td>
+Test skipped.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.AddProductToCart_ShouldDisplayBadge</p>
+            <p class="text-sm">
+              <span>15:33:38</span> / <span>682,03 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.AddProductToCart_ShouldDisplayBadge</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:38</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:38</span>
+                  <span class='badge badge-default'>682,03 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\AddProductToCart_ShouldDisplayBadge_20260422_153338.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\AddProductToCart_ShouldDisplayBadge_20260422_153338.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:38</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.RemoveProductFromCart_ShouldHideBadge</p>
+            <p class="text-sm">
+              <span>15:33:41</span> / <span>2784,21 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.RemoveProductFromCart_ShouldHideBadge</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:41</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:43</span>
+                  <span class='badge badge-default'>2784,21 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\RemoveProductFromCart_ShouldHideBadge_20260422_153343.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\RemoveProductFromCart_ShouldHideBadge_20260422_153343.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:43</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)</p>
+            <p class="text-sm">
+              <span>15:33:45</span> / <span>1266,86 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:45</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:46</span>
+                  <span class='badge badge-default'>1266,86 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)_20260422_153346.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)_20260422_153346.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:46</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)</p>
+            <p class="text-sm">
+              <span>15:33:48</span> / <span>696,69 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:48</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:49</span>
+                  <span class='badge badge-default'>696,69 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)_20260422_153349.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)_20260422_153349.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:49</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="26"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Login.LoginTests.LoginWithInValidUser("wrong_user","wrong_password")</p>
+            <p class="text-sm">
+              <span>15:33:51</span> / <span>488,01 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Login.LoginTests.LoginWithInValidUser("wrong_user","wrong_password")</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:51</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:51</span>
+                  <span class='badge badge-default'>488,01 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\LoginWithInValidUser(_wrong_user_,_wrong_password_)_20260422_153351.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\LoginWithInValidUser(_wrong_user_,_wrong_password_)_20260422_153351.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:51</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="27"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SauceDemoFramework.Tests.WebTests.Login.LoginTests.LoginWithValidUser("standard_user","secret_sauce")</p>
+            <p class="text-sm">
+              <span>15:33:53</span> / <span>705,84 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">SauceDemoFramework.Tests.WebTests.Login.LoginTests.LoginWithValidUser("standard_user","secret_sauce")</h5>
+                  <span class='badge badge-success'>22/4/2026 15:33:53</span>
+                  <span class='badge badge-danger'>22/4/2026 15:33:54</span>
+                  <span class='badge badge-default'>705,84 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\LoginWithValidUser(_standard_user_,_secret_sauce_)_20260422_153354.png' src="C:\Users\kenne\source\repos\SauceDemoFramework\SauceDemoFramework\SauceDemoFramework\bin\Debug\net8.0\Screenshots\LoginWithValidUser(_standard_user_,_secret_sauce_)_20260422_153354.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>abr 22, 2026 15:33:54</td>
+        <td>
+Test passed ✅        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="test-content scrollable">
+    <div class="test-content-tools">
+      <ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+    </div>
+    <div class="test-content-detail"><div class="detail-body"></div></div>
+  </div>
+</div>
+
+     
+
+<div class="container-fluid p-4 view dashboard-view">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0">Started</p>
+          <h3>22/4/2026 15:31:26</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0">Ended</p>
+          <h3>22/4/2026 15:33:54</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0 text-pass">Tests Passed</p>
+          <h3>12</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0 text-fail">Tests Failed</p>
+          <h3>1</h3>
+      </div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h6 class="card-title">Tests</h6>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <canvas id='parent-analysis' width='115' height='90'></canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div><small data-tooltip='0%'>
+            <b>12</b> tests passed
+            </small>
+          </div>
+          <div>
+            <small data-tooltip='0%'><b>1</b> tests failed, 
+            <b>4</b> skipped, <b data-tooltip='0%'>0</b> others
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h6 class="card-title">Steps</h6>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <canvas id='child-analysis' width='115' height='90'></canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div><small data-tooltip='0%'><b>7</b> steps passed</small></div>
+          <div>
+            <small data-tooltip='0%'><b>3</b> steps failed, 
+            <b>0</b> skipped, <b data-tooltip='%'>0</b> others
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h6 class="card-title">Log events</h6>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <canvas id='events-analysis' width='115' height='90'></canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div><small data-tooltip='0%'><b>49</b> events passed</small></div>
+          <div>
+            <small data-tooltip='0%'><b>9</b> events failed, 
+            <b data-tooltip='%'>4</b> others
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row"><div class="col-md-12">
+    <div class="card"><div class="card-header"><p>Timeline</p></div>
+      <div class="card-body pt-0"><div>
+        <canvas id="timeline" height="120"></canvas>
+      </div></div>
+    </div>
+  </div></div>
+  <script>
+	var timeline = { "Agregar productos al carrito en SauceDemo":14463,0706,"Flujo completo de compra en SauceDemo":76223,1888,"Login en SauceDemo":10973,7536,"SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)":159,8158,"SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)":1114,148,"SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)":1129,8136,"SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.Checkout_WithIncompleteData_ShouldShowError(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)":1085,8034,"SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)":1164,6561,"SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)":111,4241,"SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)":542,2755,"SauceDemoFramework.Tests.WebTests.Checkout.CheckoutTests.FullCheckout_ShouldBeSuccessful(SauceDemoFramework.Tests.WebTests.Checkout.Asserts.CheckoutTestData)":489,0523,"SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.AddProductToCart_ShouldDisplayBadge":682,0341,"SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.RemoveProductFromCart_ShouldHideBadge":2784,2068,"SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)":1266,8586,"SauceDemoFramework.Tests.WebTests.Inventory.InventoryTests.SortProducts_ByName_ShouldBeCorrectOrder(SauceDemoFramework.Tests.WebTests.Inventory.Asserts.SortTestData)":696,687,"SauceDemoFramework.Tests.WebTests.Login.LoginTests.LoginWithInValidUser("wrong_user","wrong_password")":488,0057,"SauceDemoFramework.Tests.WebTests.Login.LoginTests.LoginWithValidUser("standard_user","secret_sauce")":705,8417 };
+  </script>
+  <div class="row">
+      <div class="col-md-4 sysenv-container">
+      <div class="card">
+        <div class="card-header"><p>System/Environment</p></div>
+        <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+          <thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Environment</td>
+              <td>QA</td>
+            </tr>
+            <tr>
+              <td>Base URL</td>
+              <td>https://www.saucedemo.com</td>
+            </tr>
+            <tr>
+              <td>Framework</td>
+              <td>.NET 8</td>
+            </tr>
+            <tr>
+              <td>Runner</td>
+              <td>NUnit + Reqnroll</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var statusGroup = {
+    parentCount: 17,
+    childCount: 10,
+    grandChildCount: 0,
+    eventsCount: 62,
+
+passParent:12,failParent:1,warningParent:0,skipParent:4,    
+passChild:7,failChild:3,warningChild:0,skipChild:0,infoChild:0,    
+passGrandChild:0,failGrandChild:0,warningGrandChild:0,skipGrandChild:0,infoGrandChild:0,    
+passEvents:49,failEvents:9,warningEvents:0,skipEvents:4,infoEvents:0,  };
+</script>
+
+    </div>
+   </div>
+  </div>
+ </div>
+ <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/spark/js/spark-script.js"></script>
+<script type='text/javascript'></script>
+</body>
+</html>

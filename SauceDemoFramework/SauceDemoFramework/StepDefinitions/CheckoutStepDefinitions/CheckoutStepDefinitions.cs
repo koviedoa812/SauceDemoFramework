@@ -36,15 +36,31 @@ namespace SauceDemoFramework.StepDefinitions.Checkout
                 "No se pudo navegar a la página del carrito.");
         }
 
+        //[When(@"procede al checkout")]
+        //public void WhenProcedeAlCheckout()
+        //{
+        //    _cartPage.ClickCheckout();
+
+        //    //_wait.Until(d => d.Url.Contains("checkout-step-one.html"));
+
+        //    Assert.That(_checkoutPage.GetPageTitleCheckout(), Is.EqualTo("Checkout: Your Information"),
+        //        "No se pudo navegar al paso 1 del checkout.");
+        //}
+
+
         [When(@"procede al checkout")]
         public void WhenProcedeAlCheckout()
         {
-            _cartPage.ClickCheckout();
+            // Acción fuerte con JS
+            var checkoutBtn = _driver.FindElement(By.Id("checkout"));
+            ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", checkoutBtn);
 
-            _wait.Until(d => d.Url.Contains("checkout-step-one.html"));
+            // Esperar a que el elemento exista/esté listo
+            _wait.Until(d => _checkoutPage.GetPageTitleCheckout() == "Checkout: Your Information");
 
+            // El Assert es tu "seguro de vida"
             Assert.That(_checkoutPage.GetPageTitleCheckout(), Is.EqualTo("Checkout: Your Information"),
-                "No se pudo navegar al paso 1 del checkout.");
+                "Error: El título de la página de checkout no es el esperado.");
         }
 
         [When(@"completa el formulario con nombre ""(.*)"" apellido ""(.*)"" y código postal ""(.*)""")]
